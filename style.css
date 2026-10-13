@@ -1,0 +1,54 @@
+/* Colours used across the whole site */
+:root {
+  --main: #1f3a5f;
+  --accent: #e07a2e;
+  --text: #222222;
+  --light: #f5f6f8;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Top menu */
+header {
+  background: var(--main);
+  padding: 16px 24px;
+}
+header a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+header .logo {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Page content */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+h1 {
+  color: var(--main);
+}
+
+/* Boxes for updates */
+.card {
+  background: var(--light);
+  border-left: 4px solid var(--accent);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: #666666;
+  font-size: 0.9em;
+}
