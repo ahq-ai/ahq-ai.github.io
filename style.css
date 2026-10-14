@@ -1,54 +1,100 @@
+/* Fonts: a pixel font for headings, a rounded font for reading */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700&display=swap');
+
 /* Colours used across the whole site */
 :root {
-  --main: #1f3a5f;
-  --accent: #e07a2e;
-  --text: #222222;
-  --light: #f5f6f8;
+  --space: #0b0d2a;
+  --panel: #161a45;
+  --cyan: #3ee6ff;
+  --magenta: #ff4fd8;
+  --yellow: #ffe14d;
+  --text: #e8eaff;
 }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
   color: var(--text);
-  line-height: 1.6;
+  background-color: var(--space);
+  /* Stars: small dots of light repeated across the page */
+  background-image:
+    radial-gradient(2px 2px at 25px 35px, #ffffff, transparent),
+    radial-gradient(1px 1px at 90px 140px, #ffffff, transparent),
+    radial-gradient(2px 2px at 160px 60px, var(--yellow), transparent),
+    radial-gradient(1px 1px at 210px 190px, #ffffff, transparent),
+    radial-gradient(2px 2px at 60px 220px, var(--cyan), transparent),
+    radial-gradient(1px 1px at 240px 20px, #ffffff, transparent);
+  background-size: 260px 260px;
+}
+
+/* Headings in pixel style */
+h1, h2, h3, header .logo {
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.5;
+}
+h1 {
+  font-size: 22px;
+  color: var(--yellow);
+  text-shadow: 3px 3px 0 var(--magenta);
+}
+h2 {
+  font-size: 15px;
+  color: var(--cyan);
+  margin-top: 36px;
+}
+h3 {
+  font-size: 13px;
 }
 
 /* Top menu */
 header {
-  background: var(--main);
+  background: var(--panel);
+  border-bottom: 4px solid var(--cyan);
   padding: 16px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
 }
 header a {
-  color: white;
+  color: var(--text);
   text-decoration: none;
-  margin-right: 20px;
+  font-weight: 700;
+}
+header a:hover {
+  color: var(--yellow);
 }
 header .logo {
-  font-weight: bold;
-  font-size: 1.2em;
+  font-size: 13px;
+  color: var(--yellow);
+  margin-right: auto;
 }
 
 /* Page content */
 main {
   max-width: 800px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 32px 20px;
 }
-h1 {
-  color: var(--main);
+a {
+  color: var(--yellow);
 }
 
-/* Boxes for updates */
+/* Boxes styled like game dialogue boxes */
 .card {
-  background: var(--light);
-  border-left: 4px solid var(--accent);
-  padding: 16px;
-  margin-bottom: 16px;
+  background: var(--panel);
+  border: 3px solid var(--cyan);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  box-shadow: 6px 6px 0 var(--magenta);
 }
 
 footer {
   text-align: center;
-  padding: 24px;
-  color: #666666;
+  padding: 32px 20px;
+  color: #9aa0d0;
   font-size: 0.9em;
 }
