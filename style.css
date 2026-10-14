@@ -1,6 +1,5 @@
 /* Fonts: a pixel font for headings, a rounded font for reading */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&family=Nunito:wght@400;700&display=swap');
 /* Colours used across the whole site */
 :root {
   --space: #0b0d2a;
@@ -31,70 +30,20 @@ body {
 
 /* Headings in pixel style */
 h1, h2, h3, header .logo {
-  font-family: 'Press Start 2P', monospace;
-  line-height: 1.5;
+  font-family: 'Pixelify Sans', monospace;
+  font-weight: 700;
+  line-height: 1.3;
 }
 h1 {
-  font-size: 22px;
+  font-size: 34px;
   color: var(--yellow);
-  text-shadow: 3px 3px 0 var(--magenta);
+  text-shadow: 2px 2px 0 var(--magenta);
 }
 h2 {
-  font-size: 15px;
+  font-size: 24px;
   color: var(--cyan);
   margin-top: 36px;
 }
 h3 {
-  font-size: 13px;
-}
-
-/* Top menu */
-header {
-  background: var(--panel);
-  border-bottom: 4px solid var(--cyan);
-  padding: 16px 24px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 24px;
-}
-header a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 700;
-}
-header a:hover {
-  color: var(--yellow);
-}
-header .logo {
-  font-size: 13px;
-  color: var(--yellow);
-  margin-right: auto;
-}
-
-/* Page content */
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 32px 20px;
-}
-a {
-  color: var(--yellow);
-}
-
-/* Boxes styled like game dialogue boxes */
-.card {
-  background: var(--panel);
-  border: 3px solid var(--cyan);
-  border-radius: 14px;
-  padding: 18px 22px;
-  margin-bottom: 24px;
-  box-shadow: 6px 6px 0 var(--magenta);
-}
-
-footer {
-  text-align: center;
-  padding: 32px 20px;
-  color: #9aa0d0;
-  font-size: 0.9em;
+  font-size: 19px;
 }
