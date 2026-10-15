@@ -170,56 +170,72 @@ nav a:hover {
   50% { transform: translateY(-30px) rotate(4deg); }
 }
 
-/* Ringed planet: back ring, ball, front ring */
-.saturn {
-  width: 260px;
-  height: 260px;
-  top: 4%;
-  right: 5%;
-}
-.saturn .ball {
-  position: absolute;
-  inset: 50px;
+/* Moon on the right: big, with craters and shadow */
+.moon {
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #c7b8ff, var(--purple) 45%, #24124a 80%);
-  box-shadow: inset -20px -20px 40px rgba(0,0,0,0.6), 0 0 60px rgba(107,63,160,0.6);
-}
-.saturn .ring {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 105px;
-  height: 50px;
-  border-radius: 50%;
-  border: 8px solid rgba(143,245,210,0.75);
-  transform: rotate(-18deg);
-}
-.saturn .ring.front {
-  clip-path: inset(50% 0 0 0);
+  top: 6%;
+  right: 6%;
+  background:
+    radial-gradient(circle at 30% 35%, rgba(0,0,0,0.22) 16px, transparent 17px),
+    radial-gradient(circle at 62% 28%, rgba(0,0,0,0.18) 10px, transparent 11px),
+    radial-gradient(circle at 60% 62%, rgba(0,0,0,0.22) 26px, transparent 27px),
+    radial-gradient(circle at 35% 72%, rgba(0,0,0,0.18) 12px, transparent 13px),
+    radial-gradient(circle at 80% 45%, rgba(0,0,0,0.15) 7px, transparent 8px),
+    radial-gradient(circle at 35% 30%, #fffaf0, #d8d2c0 55%, #7d7868);
+  box-shadow: inset -30px -24px 50px rgba(0,0,0,0.6), 0 0 70px rgba(255,248,220,0.25);
+  animation-duration: 9s;
 }
 
-/* Moon with craters */
-.moon {
-  width: 80px;
-  height: 80px;
+/* Mars on the left: red-orange, dark patches, white polar cap */
+.mars {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  top: 60%;
-  right: 14%;
+  top: 40%;
+  left: 5%;
   background:
-    radial-gradient(circle at 30% 35%, rgba(0,0,0,0.25) 8px, transparent 9px),
-    radial-gradient(circle at 65% 60%, rgba(0,0,0,0.2) 11px, transparent 12px),
-    radial-gradient(circle at 45% 75%, rgba(0,0,0,0.2) 5px, transparent 6px),
-    radial-gradient(circle at 35% 30%, #fff6d6, #d9cfa8 60%, #8c835f);
-  box-shadow: inset -10px -8px 20px rgba(0,0,0,0.5), 0 0 30px rgba(245,197,66,0.3);
-  animation-delay: -2s;
-  animation-duration: 8s;
+    radial-gradient(ellipse 30px 10px at 50% 8%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(ellipse 40px 18px at 35% 45%, rgba(90,25,10,0.55), transparent),
+    radial-gradient(ellipse 28px 14px at 68% 62%, rgba(90,25,10,0.5), transparent),
+    radial-gradient(ellipse 20px 10px at 45% 78%, rgba(90,25,10,0.4), transparent),
+    radial-gradient(circle at 35% 30%, #ffb27a, #d9532b 50%, #6e1f0c 85%);
+  box-shadow: inset -22px -18px 36px rgba(0,0,0,0.55), 0 0 50px rgba(217,83,43,0.45);
+  animation-delay: -3s;
+  animation-duration: 7s;
+}
+
+/* Hand-drawn doodle rock */
+.doodle {
+  position: absolute;
+  width: 150px;
+  bottom: 8%;
+  right: 20%;
+  animation: tumble 12s ease-in-out infinite;
+}
+.doodle path {
+  fill: none;
+  stroke: #eef2ff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.doodle .shade {
+  stroke: var(--mint);
+  stroke-width: 2;
+  opacity: 0.7;
+}
+@keyframes tumble {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-18px) rotate(8deg); }
 }
 
 /* Rocket */
 .rocket {
-  width: 90px;
-  top: 18%;
-  left: 9%;
+  width: 70px;
+  top: 10%;
+  left: 14%;
   animation-duration: 5s;
 }
 .rocket .flame {
@@ -232,15 +248,14 @@ nav a:hover {
   to { transform: scaleY(1.35); }
 }
 
-/* Asteroids */
+/* Small asteroids */
 .asteroid {
   background: radial-gradient(circle at 35% 30%, #7a7f99, #3a3f58 60%, #1c1f30);
   box-shadow: inset -6px -6px 12px rgba(0,0,0,0.6);
   border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
 }
-.a1 { width: 70px; height: 55px; bottom: 12%; left: 7%; animation-duration: 9s; }
-.a2 { width: 34px; height: 28px; top: 55%; left: 22%; animation-delay: -4s; }
-.a3 { width: 24px; height: 20px; top: 14%; left: 40%; animation-delay: -1s; animation-duration: 7s; }
+.a2 { width: 30px; height: 24px; top: 70%; left: 26%; animation-delay: -4s; }
+.a3 { width: 22px; height: 18px; top: 16%; left: 40%; animation-delay: -1s; animation-duration: 7s; }
 
 /* Shooting star */
 .shooting-star {
@@ -307,12 +322,11 @@ footer a {
 
 /* Phones: smaller and fewer objects */
 @media (max-width: 600px) {
-  .hero { min-height: auto; padding: 80px 20px 60px; }
-  .saturn { width: 150px; height: 150px; top: 30px; right: -55px; }
-  .saturn .ball { inset: 30px; }
-  .saturn .ring { top: 60px; height: 30px; border-width: 5px; }
-  .rocket { width: 55px; top: 2%; left: 4%; }
-  .moon, .a1, .a2, .a3 { display: none; }
+  .hero { min-height: auto; padding: 90px 20px 70px; }
+  .moon { width: 110px; height: 110px; top: 10px; right: -30px; }
+  .mars { width: 70px; height: 70px; top: auto; bottom: 6%; left: -15px; }
+  .rocket { width: 45px; top: 10px; left: 6%; }
+  .doodle, .a2, .a3 { display: none; }
 }
 
 /* Respect visitors who switch off animations */
