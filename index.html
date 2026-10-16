@@ -1,44 +1,33 @@
-9<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+<!-- HEAD: information for the browser and Google, not shown on the page -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marketing and AI | Learn it. Use it. Share it.</title>
+  <meta name="description" content="Weekly updates on AI in marketing, explained in plain language, with every source linked.">
+  <!-- Connects this page to the design file. Without this line the page shows unstyled -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
   <!-- MENU AND BREADCRUMB: filled in by menu.js -->
   <div id="site-header"></div>
-  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c63829bfea0d47c79f9a91db8008874c"}'></script><!-- End Cloudflare Web Analytics -->
 
-<body>
-  <header>
-    <a href="index.html" class="logo">Marketing and AI</a>
-    <nav>
-      <a href="updates.html">AI Marketing</a>
-      <a href="design-lab.html">Design Lab</a>
-      <a href="discoveries.html">Discoveries</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
-
-    <!-- HERO: the big opening area of the homepage. Everything inside floats behind the headline. -->
+  <!-- HERO: the big opening area. Everything inside floats behind the headline -->
   <section class="hero">
-
-    <!-- FAR LAYER: small, faded, slightly blurred and slow-moving, so these look far away -->
-    <!-- Neptune: tiny blue planet, the farthest away -->
+    <!-- Far layer: small, faded, slow -->
     <div class="planet far neptune"></div>
-    <!-- Mars: small red planet in the distance -->
     <div class="planet far mars"></div>
-    <!-- Saturn: a ball with a ring. The ring is split in two (back and front) so it seems to wrap around the planet -->
     <div class="far saturn" style="position:absolute">
       <div class="ring"></div>
       <div class="ball"></div>
       <div class="ring front"></div>
     </div>
 
-    <!-- MIDDLE AND NEAR LAYER: bigger, sharper, and moving more, so these look closer -->
-    <!-- Jupiter: striped planet on the left -->
+    <!-- Middle and near layers: bigger, sharper, more movement -->
     <div class="planet float jupiter"></div>
-    <!-- Moon: cratered moon on the right -->
     <div class="planet float moon"></div>
-    <!-- A small grey asteroid -->
     <div class="float asteroid a2"></div>
-
-    <!-- Doodle rock: a hand-drawn outline made with SVG (a drawing written in code). Each path is one line of the drawing -->
     <svg class="doodle" viewBox="0 0 130 100" aria-hidden="true">
       <path d="M18 58 C12 40 26 22 46 18 C60 8 82 12 94 24 C112 28 122 46 114 62 C110 80 88 90 66 86 C48 94 26 84 18 58 Z"/>
       <path d="M44 42 C48 36 56 36 58 42 C56 48 48 48 44 42 Z"/>
@@ -46,34 +35,25 @@
       <path d="M66 30 C68 27 72 28 72 31"/>
       <path class="shade" d="M30 70 L38 62 M40 76 L50 66 M54 80 L62 72 M98 70 L106 62"/>
     </svg>
-
-    <!-- Rocket: also an SVG drawing. Parts in order: flame (flickers), body, fins, window -->
     <svg class="float rocket" viewBox="0 0 60 110" aria-hidden="true">
       <path class="flame" d="M22 88 L30 108 L38 88 Z" fill="#f5c542"/>
       <path d="M30 2 C44 18 46 50 42 88 L18 88 C14 50 16 18 30 2 Z" fill="#eef2ff"/>
       <path d="M18 62 L4 86 L18 84 Z M42 62 L56 86 L42 84 Z" fill="#19c4a4"/>
       <circle cx="30" cy="40" r="8" fill="#6b3fa0" stroke="#19c4a4" stroke-width="3"/>
     </svg>
-
-    <!-- Shooting star: a thin line of light that crosses the sky every few seconds -->
     <div class="shooting-star"></div>
 
-    <!-- HEADLINE: three lines that appear one after another. "em" marks the words shown in gold -->
+    <!-- HEADLINE: three lines that appear one after another. "em" marks the words in gold -->
     <h1>
       <span><em>Learn</em> it.</span>
       <span><em>Use</em> it.</span>
       <span><em>Share</em> it.</span>
     </h1>
-
-    <!-- SUBLINE: one sentence telling visitors what they get -->
+    <!-- SUBLINE AND BUTTON: what visitors get, and where to go next -->
     <p>Weekly updates on AI in marketing, explained in plain language, with every source linked.</p>
-
-    <!-- BUTTON: the main call to action, leading to the Updates page -->
     <a class="button" href="updates.html">See this week's updates</a>
-
   </section>
-  <!-- END OF HERO -->
-  
+
   <!-- MAIN: the three newest update headlines, linking to the full Updates page -->
   <main>
     <h2>Latest updates</h2>
@@ -102,7 +82,7 @@
   <!-- FOOTER: filled in by menu.js -->
   <div id="site-footer"></div>
 
-  <!-- SHARED MENU: builds the menu, breadcrumb and footer -->
+  <!-- SHARED MENU: builds the menu, breadcrumb and footer above -->
   <script src="menu.js"></script>
 
   <!-- ANALYTICS: counts visits to this page in Cloudflare -->
