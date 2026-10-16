@@ -431,3 +431,101 @@ footer a {
   color: var(--muted);
   margin-bottom: 0;
 }
+
+/* ===== SHARED MENU: dropdowns, current page, breadcrumb ===== */
+
+/* Keep the menu above the floating planets */
+header {
+  z-index: 10;
+}
+
+/* Menu buttons that open a dropdown look the same as normal menu links */
+.dropdown-toggle {
+  font-family: 'Outfit', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--text);
+  padding: 8px 18px;
+  border: 1px solid rgba(143,245,210,0.35);
+  border-radius: 999px;
+  background: rgba(13,20,51,0.6);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.dropdown-toggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* The page you are on: gold text and border */
+nav a.current,
+.dropdown-toggle.current {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* A dropdown sits under its button and is hidden until opened */
+.menu-item {
+  position: relative;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 230px;
+  background: var(--navy);
+  border: 1px solid rgba(143,245,210,0.35);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  text-align: left;
+}
+.menu-item.open .dropdown {
+  display: block;
+}
+
+/* Links inside a dropdown: full width, no pill border */
+.dropdown a,
+.dropdown .soon {
+  display: block;
+  border: none;
+  background: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+.dropdown a:hover {
+  background: rgba(143,245,210,0.1);
+}
+.dropdown .soon {
+  color: var(--muted);
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Breadcrumb: the small "Home › Section › Page" trail */
+.breadcrumb {
+  max-width: 820px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+  font-size: 15px;
+  color: var(--muted);
+}
+.breadcrumb a {
+  color: var(--mint);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+.breadcrumb .here {
+  color: var(--text);
+}
+
+/* Phones: slightly smaller menu buttons */
+@media (max-width: 600px) {
+  nav a, .dropdown-toggle { font-size: 16px; padding: 7px 14px; }
+}
