@@ -412,3 +412,22 @@ footer a {
   *, *::before, *::after { animation: none !important; }
   .hero h1 span { opacity: 1; }
 }
+
+/* ===== UPDATES: weekly news cards ===== */
+.update-meta {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 4px;
+}
+.card h3 { margin-top: 4px; }
+.why {
+  border-left: 3px solid var(--gold);
+  padding-left: 12px;
+  margin: 12px 0;
+}
+.why strong { color: var(--gold); }
+.source {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
