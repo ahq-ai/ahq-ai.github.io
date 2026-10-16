@@ -4,43 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Title shown in the browser tab and in Google results -->
   <title>Weekly Updates | Marketing and AI</title>
-  <!-- Short description Google shows under the title -->
   <meta name="description" content="Weekly summaries of AI developments for marketers, explained in plain language, with sources.">
   <!-- Connects this page to the design file -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- MENU: same on every page -->
-  <header>
-    <a href="index.html" class="logo">Marketing and AI</a>
-    <nav>
-      <a href="updates.html">AI Marketing</a>
-      <a href="design-lab.html">Design Lab</a>
-      <a href="discoveries.html">Discoveries</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+  <!-- MENU AND BREADCRUMB: filled in by menu.js -->
+  <div id="site-header"></div>
 
-  <!-- MAIN: the content of this page -->
   <main>
-    <!-- Small green label, page title and intro -->
     <span class="tag">Mission Control · AI Marketing Weekly</span>
     <h1>Weekly updates</h1>
     <p class="model-intro">The most useful AI developments for marketers, explained in plain language. Every item links to its original source. Newest week first.</p>
 
     <!-- ===== WEEK OF 12 OCTOBER 2026 ===== -->
-    <!-- New weeks go ABOVE this heading, so the newest week is always on top -->
     <h2>Week of 12 October 2026</h2>
 
-    <!-- UPDATE 1: each card = label, headline, summary, why it matters, source -->
+    <!-- UPDATE 1 -->
     <div class="card">
       <p class="update-meta">Advertising · Google</p>
       <h3>Google can now translate your ads into Dutch automatically</h3>
       <p>Google is testing a tool (in beta) that turns English search ads into versions for ten languages, Dutch among them. It translates headlines, descriptions and keywords, places them in a new campaign that starts paused, and can also translate the landing page. Advertisers can set rules such as "keep the brand name" or "use a formal tone".</p>
       <p class="why"><strong>Why it matters:</strong> Entering a new market gets much cheaper. But a correct translation is not automatically the right message for that culture, so human checks still matter for important ads.</p>
-      <!-- target="_blank" opens the source in a new tab, so readers stay on your site -->
       <p class="source">Source: <a href="https://slator.com/google-ai-ad-localization-tool/" target="_blank" rel="noopener">Slator</a>, 12 October 2026</p>
     </div>
 
@@ -63,3 +49,31 @@
     </div>
 
     <!-- UPDATE 4 -->
+    <div class="card">
+      <p class="update-meta">Search · Google</p>
+      <h3>Ads are moving into Google's AI answers</h3>
+      <p>Google is testing several ad formats inside AI Mode, its chat-style search, including sponsored businesses in recommendation lists and offers shown during shopping conversations. There is no separate campaign type for it: ads enter through existing automated campaign types. One July study of US commercial searches found text ads in about 29% of AI Mode answers.</p>
+      <p class="why"><strong>Why it matters:</strong> Search advertising is changing shape. The question is no longer only "are we on page one?" but "are we part of the answer?"</p>
+      <p class="source">Source: <a href="https://searchengineland.com/google-ai-mode-ads-everything-you-need-to-know-494628" target="_blank" rel="noopener">Search Engine Land</a>, 9 October 2026</p>
+    </div>
+
+    <!-- UPDATE 5 -->
+    <div class="card">
+      <p class="update-meta">Trend to watch · Branding</p>
+      <h3>"Human-made" as a selling point</h3>
+      <p>After public criticism of fully AI-generated ads, such as Coca-Cola's holiday ads and a Valentino handbag campaign, some brands now promote human work as a mark of quality. Clothing brand Aerie pledged "Real people only", and the post became its most-liked Instagram post of the year. Research also suggests consumers value luxury brands less when they disclose AI-generated imagery.</p>
+      <p class="why"><strong>Why it matters:</strong> AI saves time and money, but signals of effort and authenticity are becoming part of the brand. This links directly to Imagery and Judgments in <a href="keller-pyramid.html">Keller's Brand Equity Pyramid</a>.</p>
+      <p class="source">Source: <a href="https://finance.yahoo.com/media-advertising/articles/valentino-coca-cola-faced-fierce-100000529.html" target="_blank" rel="noopener">Yahoo Finance / Moneywise</a>, 16 August 2026</p>
+    </div>
+  </main>
+
+  <!-- FOOTER: filled in by menu.js -->
+  <div id="site-footer"></div>
+
+  <!-- SHARED MENU: builds the menu, breadcrumb and footer above -->
+  <script src="menu.js"></script>
+
+  <!-- ANALYTICS: counts visits to this page in Cloudflare -->
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c63829bfea0d47c79f9a91db8008874c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

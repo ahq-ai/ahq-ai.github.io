@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD: information for the browser and Google, not shown on the page -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keller's Brand Equity Pyramid | Marketing and AI</title>
+  <meta name="description" content="An interactive guide to Keller's Brand Equity Pyramid, with a real brand example and how AI changes each level.">
+  <!-- Connects this page to the design file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- MENU AND BREADCRUMB: filled in by menu.js -->
+  <div id="site-header"></div>
+
+  <main>
+    <!-- INTRO: what the model is and how to use this page -->
+    <span class="tag">Model Explorer · Branding</span>
+    <h1>Keller's Brand Equity Pyramid</h1>
+    <p class="model-intro">Kevin Lane Keller's model shows how a strong brand is built step by step, from being known to being loved. Each level rests on the one below it. Click any block to explore it.</p>
+
+    <!-- THE PYRAMID: each button is one building block. data-block links it to its text below -->
+    <div class="pyramid">
+      <div class="pyramid-row row-1">
+        <button class="block" data-block="resonance">Resonance</button>
+      </div>
+      <div class="pyramid-row row-2">
+        <button class="block" data-block="judgments">Judgments</button>
+        <button class="block" data-block="feelings">Feelings</button>
+      </div>
+      <div class="pyramid-row row-3">
+        <button class="block" data-block="performance">Performance</button>
+        <button class="block" data-block="imagery">Imagery</button>
+      </div>
+      <div class="pyramid-row row-4">
+        <button class="block active" data-block="salience">Salience</button>
+      </div>
+    </div>
+    <div class="routes">
+      <span>← Rational route (head)</span>
+      <span>Emotional route (heart) →</span>
+    </div>
+
+    <!-- THE FOUR QUESTIONS a customer asks, from bottom to top -->
+    <ul class="levels">
+      <li><strong>1. Identity:</strong> Who are you?</li>
+      <li><strong>2. Meaning:</strong> What are you?</li>
+      <li><strong>3. Response:</strong> What do I think and feel about you?</li>
+      <li><strong>4. Relationship:</strong> What about you and me?</li>
+    </ul>
+
+    <!-- THE INFO PANEL: filled with text when a block is clicked -->
+    <div class="card panel" id="panel" aria-live="polite"></div>
+
+    <p class="model-intro">Example brand: Tony's Chocolonely, the Dutch chocolate brand built around a mission to end exploitation in the cocoa chain.</p>
+    <p class="model-intro">Source: Keller, K. L. (2001). Building customer-based brand equity. <em>Marketing Management</em>, 10(2), 14–19.</p>
+  </main>
+
+  <!-- FOOTER: filled in by menu.js -->
+  <div id="site-footer"></div>
+
+  <!-- SHARED MENU: builds the menu, breadcrumb and footer above -->
+  <script src="menu.js"></script>
+
+  <!-- JAVASCRIPT: makes the pyramid interactive. It holds the text for each block and shows it when clicked -->
+  <script>
+    const content = {
+      salience: {
+        title: "Salience: Who are you?",
+        what: "How easily customers notice and remember the brand, and in which situations they think of it. It is the foundation: a brand people don't think of can't be chosen.",
+        example: "Tony's Chocolonely's bright, colourful wrappers stand out on any supermarket shelf, so the brand is easy to spot and remember.",
+        ai: "Customers increasingly ask AI assistants for recommendations instead of searching or browsing. If your brand doesn't come up in AI answers, it loses salience. Being 'findable by AI' is the new shelf space.",
+        apply: "When someone asks an AI assistant for a product in your category, does your brand appear? Try it and note what comes up."
+      },
+      performance: {
+        title: "Performance: What are you? (rational)",
+        what: "How well the product meets practical needs: quality, price, reliability, design and service.",
+        example: "Tony's Chocolonely is judged on taste, texture and the range of flavours, like any chocolate brand.",
+        ai: "AI tools summarise thousands of reviews in seconds, so customers can compare performance instantly. Weak points are harder to hide, and strong points spread faster.",
+        apply: "List your brand's three most important performance promises. Which one would AI-summarised reviews confirm, and which might they question?"
+      },
+      imagery: {
+        title: "Imagery: What are you? (emotional)",
+        what: "The less tangible side of the brand: its personality, values, the type of people who use it, and the stories around it.",
+        example: "The bar is divided into unequal pieces on purpose, to show the unequal division of value in the cocoa chain. The product itself tells the brand story.",
+        ai: "AI makes it easy for every brand to produce polished visuals, so images start to look alike. Distinctive, recognisable brand elements become more valuable, not less.",
+        apply: "Describe your brand as a person in three words. Would a customer who sees only your visuals choose the same three words?"
+      },
+      judgments: {
+        title: "Judgments: What do I think of you? (rational)",
+        what: "Customers' overall opinions: is the brand credible, good quality, worth considering, and better than alternatives?",
+        example: "Customers judge whether Tony's mission is credible, which is why the brand openly reports on its progress and challenges.",
+        ai: "Trust now includes how a brand uses AI. Being open about AI-generated content and data use builds credibility; hiding it can damage judgments quickly once discovered.",
+        apply: "If your brand uses AI in its marketing, would customers trust it more or less if you said so openly? Why?"
+      },
+      feelings: {
+        title: "Feelings: How do I feel about you? (emotional)",
+        what: "The emotional reactions the brand creates, such as warmth, fun, excitement, security, social approval or self-respect.",
+        example: "Buying Tony's can give people a sense of doing something good, a feeling of self-respect alongside the enjoyment.",
+        ai: "AI allows highly personalised messages. Done well, it feels thoughtful and warm; done badly, it feels intrusive or 'creepy'. The line between the two is a feeling, not a technology.",
+        apply: "Name one personalised message your brand could send. Would it make the customer feel understood, or watched?"
+      },
+      resonance: {
+        title: "Resonance: What about you and me?",
+        what: "The top of the pyramid: deep loyalty, a sense of community and active engagement. Customers feel a real bond and promote the brand themselves.",
+        example: "Fans of Tony's share the brand's mission, talk about it and recommend it, turning customers into supporters of a cause.",
+        ai: "AI chatbots and automated service can make contact faster, but resonance is built on human connection. The challenge is using AI for efficiency without losing the personal relationship.",
+        apply: "Where in your customer journey should a human always be present, even if AI could do the job? Explain your choice."
+      }
+    };
+
+    const panel = document.getElementById("panel");
+    const blocks = document.querySelectorAll(".block");
+
+    function show(key) {
+      const c = content[key];
+      panel.innerHTML =
+        "<h3>" + c.title + "</h3>" +
+        "<h4>What it means</h4><p>" + c.what + "</p>" +
+        "<h4>Brand example</h4><p>" + c.example + "</p>" +
+        "<h4>The AI twist</h4><p>" + c.ai + "</p>" +
+        "<h4>Apply it</h4><p>" + c.apply + "</p>";
+      blocks.forEach(b => b.classList.toggle("active", b.dataset.block === key));
+    }
+
+    blocks.forEach(b => b.addEventListener("click", () => show(b.dataset.block)));
+    show("salience");
+  </script>
+
+  <!-- ANALYTICS: counts visits to this page in Cloudflare -->
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c63829bfea0d47c79f9a91db8008874c"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

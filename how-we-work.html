@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- HEAD: information for the browser and Google, not shown on the page -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How we work | Marketing and AI</title>
   <meta name="description" content="How updates are gathered with AI, checked and referenced.">
+  <!-- Connects this page to the design file -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <a href="index.html" class="logo">Marketing and AI</a>
-    <a href="updates.html">Updates</a>
-    <a href="about.html">About</a>
-    <a href="how-we-work.html">How we work</a>
-  </header>
+  <!-- MENU AND BREADCRUMB: filled in by menu.js -->
+  <div id="site-header"></div>
 
+  <!-- MAIN: the content of this page -->
   <main>
     <h1>How we work</h1>
 
+    <!-- The four steps behind every update -->
     <h2>1. AI gathers</h2>
     <p>Each week, AI tools scan trusted marketing and technology sources for new developments.</p>
 
@@ -34,9 +34,13 @@
     <p>If something is wrong or outdated, let us know and we will correct it.</p>
   </main>
 
-  <footer>
-    <p>© 2026 Marketing and AI</p>
-  </footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c63829bfea0d47c79f9a91db8008874c"}'></script><!-- End Cloudflare Web Analytics -->
+  <!-- FOOTER: filled in by menu.js -->
+  <div id="site-footer"></div>
+
+  <!-- SHARED MENU: builds the menu, breadcrumb and footer above -->
+  <script src="menu.js"></script>
+
+  <!-- ANALYTICS: counts visits to this page in Cloudflare -->
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c63829bfea0d47c79f9a91db8008874c"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
