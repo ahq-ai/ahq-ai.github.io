@@ -160,22 +160,37 @@ nav a:hover {
 }
 .button:hover { transform: translateY(-3px); }
 
-/* Everything that floats */
+/* Everything that floats. Near objects move more, far objects move less */
 .float {
   position: absolute;
   animation: float 6s ease-in-out infinite;
 }
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-30px) rotate(4deg); }
+  50% { transform: translateY(-24px) rotate(4deg); }
 }
 
-/* Moon on the right: big, with craters and shadow */
+/* Far layer: small, dimmer, slightly blurred, slow. This creates the sense of distance */
+.far {
+  filter: blur(0.6px) saturate(0.7) brightness(0.8);
+  opacity: 0.85;
+  animation: float-far 16s ease-in-out infinite;
+}
+@keyframes float-far {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Planet base: round, lit from the top left */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Moon (near, right): craters and shadow */
 .moon {
-  .moon {
   width: 130px;
   height: 130px;
-  border-radius: 50%;
   top: 8%;
   right: 8%;
   background:
@@ -188,27 +203,89 @@ nav a:hover {
   box-shadow: inset -18px -14px 30px rgba(0,0,0,0.6), 0 0 50px rgba(255,248,220,0.25);
   animation-duration: 9s;
 }
-}
 
-/* Mars on the left: red-orange, dark patches, white polar cap */
-.mars {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  top: 40%;
+/* Jupiter (middle distance, left): striped bands */
+.jupiter {
+  width: 120px;
+  height: 120px;
+  top: 46%;
   left: 5%;
   background:
-    radial-gradient(ellipse 30px 10px at 50% 8%, rgba(255,255,255,0.85), transparent),
-    radial-gradient(ellipse 40px 18px at 35% 45%, rgba(90,25,10,0.55), transparent),
-    radial-gradient(ellipse 28px 14px at 68% 62%, rgba(90,25,10,0.5), transparent),
-    radial-gradient(ellipse 20px 10px at 45% 78%, rgba(90,25,10,0.4), transparent),
-    radial-gradient(circle at 35% 30%, #ffb27a, #d9532b 50%, #6e1f0c 85%);
-  box-shadow: inset -22px -18px 36px rgba(0,0,0,0.55), 0 0 50px rgba(217,83,43,0.45);
+    linear-gradient(170deg,
+      #e8c9a0 0%, #e8c9a0 18%,
+      #b9784a 18%, #b9784a 26%,
+      #f0dcbc 26%, #f0dcbc 40%,
+      #a8643c 40%, #a8643c 50%,
+      #e2c29a 50%, #e2c29a 64%,
+      #c4885a 64%, #c4885a 72%,
+      #efd8b6 72%, #efd8b6 100%);
+  box-shadow: inset -22px -16px 34px rgba(0,0,0,0.6), 0 0 40px rgba(232,201,160,0.25);
+  animation-duration: 8s;
   animation-delay: -3s;
-  animation-duration: 7s;
+}
+.jupiter::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 12px;
+  border-radius: 50%;
+  background: #b4512e;
+  top: 58%;
+  left: 52%;
 }
 
-/* Hand-drawn doodle rock */
+/* Mars (far): small red dot in the distance */
+.mars {
+  width: 46px;
+  height: 46px;
+  top: 32%;
+  right: 24%;
+  background:
+    radial-gradient(ellipse 10px 4px at 50% 8%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(ellipse 14px 6px at 38% 50%, rgba(90,25,10,0.5), transparent),
+    radial-gradient(circle at 35% 30%, #ffb27a, #d9532b 50%, #6e1f0c 85%);
+  box-shadow: inset -8px -6px 12px rgba(0,0,0,0.55), 0 0 20px rgba(217,83,43,0.4);
+}
+
+/* Saturn (far): small, with a ring */
+.saturn {
+  width: 80px;
+  height: 80px;
+  top: 12%;
+  left: 31%;
+}
+.saturn .ball {
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff0c2, #d8b46a 50%, #6b5224 85%);
+  box-shadow: inset -6px -5px 10px rgba(0,0,0,0.55);
+}
+.saturn .ring {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 32px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid rgba(240,220,170,0.8);
+  transform: rotate(-15deg);
+}
+.saturn .ring.front {
+  clip-path: inset(50% 0 0 0);
+}
+
+/* Neptune (farthest): tiny blue dot */
+.neptune {
+  width: 28px;
+  height: 28px;
+  bottom: 20%;
+  left: 22%;
+  background: radial-gradient(circle at 35% 30%, #b8e6ff, #3a7bd5 55%, #13275c 90%);
+  box-shadow: inset -5px -4px 8px rgba(0,0,0,0.5), 0 0 14px rgba(58,123,213,0.5);
+}
+
+/* Hand-drawn doodle rock (near) */
 .doodle {
   position: absolute;
   width: 150px;
@@ -233,10 +310,10 @@ nav a:hover {
   50% { transform: translateY(-18px) rotate(8deg); }
 }
 
-/* Rocket */
+/* Rocket (nearest) */
 .rocket {
   width: 70px;
-  top: 10%;
+  top: 12%;
   left: 14%;
   animation-duration: 5s;
 }
@@ -256,8 +333,7 @@ nav a:hover {
   box-shadow: inset -6px -6px 12px rgba(0,0,0,0.6);
   border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
 }
-.a2 { width: 30px; height: 24px; top: 70%; left: 26%; animation-delay: -4s; }
-.a3 { width: 22px; height: 18px; top: 16%; left: 40%; animation-delay: -1s; animation-duration: 7s; }
+.a2 { width: 30px; height: 24px; top: 72%; left: 30%; animation-delay: -4s; }
 
 /* Shooting star */
 .shooting-star {
