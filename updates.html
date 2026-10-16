@@ -1,19 +1,65 @@
-<!-- CARD: the box around one news item (style comes from .card in style.css) -->
-<div class="card">
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD: information for the browser and Google, not shown on the page -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Title shown in the browser tab and in Google results -->
+  <title>Weekly Updates | Marketing and AI</title>
+  <!-- Short description Google shows under the title -->
+  <meta name="description" content="Weekly summaries of AI developments for marketers, explained in plain language, with sources.">
+  <!-- Connects this page to the design file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- MENU: same on every page -->
+  <header>
+    <a href="index.html" class="logo">Marketing and AI</a>
+    <nav>
+      <a href="updates.html">AI Marketing</a>
+      <a href="design-lab.html">Design Lab</a>
+      <a href="discoveries.html">Discoveries</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
 
-  <!-- LABEL: small grey line showing topic and company -->
-  <p class="update-meta">Advertising · Google</p>
+  <!-- MAIN: the content of this page -->
+  <main>
+    <!-- Small green label, page title and intro -->
+    <span class="tag">Mission Control · AI Marketing Weekly</span>
+    <h1>Weekly updates</h1>
+    <p class="model-intro">The most useful AI developments for marketers, explained in plain language. Every item links to its original source. Newest week first.</p>
 
-  <!-- HEADLINE: the news in one line -->
-  <h3>Google can now translate your ads into Dutch automatically</h3>
+    <!-- ===== WEEK OF 12 OCTOBER 2026 ===== -->
+    <!-- New weeks go ABOVE this heading, so the newest week is always on top -->
+    <h2>Week of 12 October 2026</h2>
 
-  <!-- SUMMARY: what happened, in plain language -->
-  <p>Google is testing a tool...</p>
+    <!-- UPDATE 1: each card = label, headline, summary, why it matters, source -->
+    <div class="card">
+      <p class="update-meta">Advertising · Google</p>
+      <h3>Google can now translate your ads into Dutch automatically</h3>
+      <p>Google is testing a tool (in beta) that turns English search ads into versions for ten languages, Dutch among them. It translates headlines, descriptions and keywords, places them in a new campaign that starts paused, and can also translate the landing page. Advertisers can set rules such as "keep the brand name" or "use a formal tone".</p>
+      <p class="why"><strong>Why it matters:</strong> Entering a new market gets much cheaper. But a correct translation is not automatically the right message for that culture, so human checks still matter for important ads.</p>
+      <!-- target="_blank" opens the source in a new tab, so readers stay on your site -->
+      <p class="source">Source: <a href="https://slator.com/google-ai-ad-localization-tool/" target="_blank" rel="noopener">Slator</a>, 12 October 2026</p>
+    </div>
 
-  <!-- WHY IT MATTERS: the lesson for marketers, with the gold line on the left (.why) -->
-  <p class="why"><strong>Why it matters:</strong> Entering a new market...</p>
+    <!-- UPDATE 2 -->
+    <div class="card">
+      <p class="update-meta">Social advertising · Meta</p>
+      <h3>Meta lets advertisers run campaigns by chatting</h3>
+      <p>At Advertising Week New York, Meta announced that its AI business assistant is testing "agent" features: advertisers type instructions to plan campaigns, create ads and change budgets or targeting. Meta also showed tools that make several versions of a video ad, and that turn product photos into product videos.</p>
+      <p class="why"><strong>Why it matters:</strong> Day-to-day campaign work is shifting from clicking buttons to giving instructions. Meta claims 5% more conversions for advertisers using the assistant. Note that this is Meta's own figure.</p>
+      <p class="source">Source: <a href="https://www.mediapost.com/publications/article/418580/meta-unveils-enhanced-ai-business-assistant-autom.html" target="_blank" rel="noopener">MediaPost</a>, 7 October 2026</p>
+    </div>
 
-  <!-- SOURCE: link to the original article. target="_blank" opens it in a new tab -->
-  <p class="source">Source: <a href="https://..." target="_blank" rel="noopener">Slator</a>, 12 October 2026</p>
+    <!-- UPDATE 3 -->
+    <div class="card">
+      <p class="update-meta">Research · Consumer trust</p>
+      <h3>Marketers trust AI assistants more than consumers do</h3>
+      <p>Kantar surveyed over 800 senior marketers and 23,000 consumers. A net 75% of marketers plan to spend more on visibility in AI assistants in 2027. Yet only 32% of consumers use AI assistants to research brands, and only 23% trust their recommendations.</p>
+      <p class="why"><strong>Why it matters:</strong> There is a gap between where marketers are heading and where consumers are. Being visible in AI answers is useful, but trust still has to be earned elsewhere.</p>
+      <p class="source">Source: <a href="https://www.kantar.com/press-center/net-75-percent-of-marketers-plan-to-increase-investment-in-ai-visibility" target="_blank" rel="noopener">Kantar</a>, 2 October 2026</p>
+    </div>
 
-</div>
+    <!-- UPDATE 4 -->
